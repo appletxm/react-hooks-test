@@ -1,0 +1,98 @@
+<div :class="[$store.state.appPrefix + '-c-menu-edit']" v-loading="isSubmiting || isLoading">
+  <div class="u-form">
+    <el-form
+      label-width="150px"
+      ref="basicForm"
+      :inline="true"
+      :model="basicForm"
+      :rules="rules"
+      size="small">
+      <el-form-item label="上级菜单">
+        <menu-tree-search
+          ref="menuTreeSearch"
+          title="菜单选择"
+          :id="basicForm.parentId"
+          :defaultExpandedKeys="[basicForm.parentId]"
+          :defaultCheckedKeys="[basicForm.parentId]"
+          @clear="clearSelMenuData($event)"
+          @confirm="getSelMenuData($event)"
+        ></menu-tree-search>
+      </el-form-item>
+      <el-form-item label="菜单名称" prop="menuName">
+        <el-input maxlength="32" v-model="basicForm.menuName" placeholder="请输入菜单名称"></el-input>
+      </el-form-item>
+      <el-form-item label="菜单类型" prop="menuType">
+        <el-select v-model="basicForm.menuType" clearable placeholder="请选择菜单类型">
+          <el-option
+            v-for="(value, key, index) in menuTypeMap"
+            :key="index"
+            :value="key"
+            :label="value"
+          ></el-option>
+        </el-select>
+      </el-form-item>
+      <el-form-item label="菜单是否显示" prop="isShow">
+        <el-select v-model="basicForm.isShow" clearable placeholder="请选择是否显示">
+          <el-option
+            v-for="(value, key, index) in menuIsShowMap"
+            :key="index"
+            :value="key"
+            :label="value"
+          ></el-option>
+        </el-select>
+      </el-form-item>
+      <el-form-item label="菜单归属类型">
+        <el-select v-model="basicForm.belongType" clearable placeholder="请选择菜单归属类型">
+          <el-option
+            v-for="(value, key, index) in menuBelongTypeMap"
+            :key="index"
+            :value="key"
+            :label="value"
+          ></el-option>
+        </el-select>
+      </el-form-item>
+      <el-form-item label="排序号">
+        <el-input v-model="basicForm.sortNo" maxlength="9" placeholder="请输入排序号"></el-input>
+      </el-form-item>
+      <el-form-item v-if="basicForm.menuType==='1'" label="菜单链接" prop="menuUrl">
+        <el-input maxlength="32" v-model="basicForm.menuUrl" placeholder="请输入菜单链接"></el-input>
+      </el-form-item>
+      <el-form-item label="菜单链接" v-else>
+        <el-input maxlength="32" v-model="basicForm.menuUrl" placeholder="请输入菜单链接"></el-input>
+      </el-form-item>
+      <el-form-item label="菜单图标">
+        <el-input maxlength="32" v-model="basicForm.menuIcon" placeholder="请输入菜单图标类名"></el-input>
+      </el-form-item>
+      <el-form-item label="菜单权限id">
+        <el-input maxlength="32" v-model="basicForm.permission" placeholder="请输入菜单权限id"></el-input>
+      </el-form-item>
+      <el-form-item label="菜单权重">
+        <el-select v-model="basicForm.weight" clearable placeholder="请选择菜单权重">
+          <el-option
+            v-for="(value, key, index) in menuWeightMap"
+            :key="index"
+            :value="Number(key)"
+            :label="value"
+          ></el-option>
+        </el-select>
+      </el-form-item>
+    </el-form>
+
+    <el-form
+      label-width="150px"
+      ref="detailForm"
+      :inline="true"
+      :model="detailForm">
+      <el-form-item label="备注">
+        <el-input maxlength="100" type="textarea" :rows="2" v-model="detailForm.remark" placeholder="请输入备注"></el-input>
+      </el-form-item>
+    </el-form>
+
+    <div class="g-c">
+      <hf-ui-button type="primary" @click="$submit" v-if="!isSubmiting">{{ txtSubmit }}</hf-ui-button>
+      <hf-ui-button type="primary" @click="$submit" v-else disabled>{{ txtSubmit }}</hf-ui-button>
+      <hf-ui-button @click="$resetForm">重置表单</hf-ui-button>
+      <hf-ui-button @click="$close">关闭</hf-ui-button>
+    </div>
+  </div>
+</div>

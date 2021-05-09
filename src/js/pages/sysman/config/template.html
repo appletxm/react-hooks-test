@@ -1,0 +1,76 @@
+<div :class="[$store.state.appPrefix + '-p-config']">
+  <el-form label-suffix=":" :inline="true" ref="filterForm" :model="filterForm" size="small" class="g-list-filter">
+    <hf-ui-row :gutter="24">
+      <hf-ui-col :span="5">
+        <el-form-item label="参数键名">
+          <el-input v-model="filterForm.configKey" clearable placeholder="请输入参数键名"></el-input>
+        </el-form-item>
+      </hf-ui-col>
+      <hf-ui-col :span="5">
+        <el-form-item label="参数键值">
+          <el-input v-model="filterForm.configValue" clearable placeholder="请输入参数键值"></el-input>
+        </el-form-item>
+      </hf-ui-col>
+      <hf-ui-col :span="11">
+        <hf-ui-button type="primary" @click="$search">查询</hf-ui-button>
+        <hf-ui-button @click="$resetForm">重置</hf-ui-button>
+      </hf-ui-col>
+      <hf-ui-col :span="3">
+        <hf-ui-button v-if="$hasPermission('config--add')" type="secondary" @click="$add">新建</hf-ui-button>
+        <hf-ui-button v-if="$hasPermission('config--del')" type="important" @click="$delConfirm(null)" :disabled="selectedItems.length < 1">删除</hf-ui-button>
+      </hf-ui-col>
+    </hf-ui-row>
+  </el-form>
+  <div v-loading="isListLoading" class="list-content">
+    <el-table
+      stripe
+      size="small"
+      empty-text="暂无数据"
+      ref="configTable"
+      tooltip-effect="dark"
+      :data="list"
+      header-row-class-name="table-tit"
+      @sort-change="$setSort"
+      @selection-change="$selectionChange">
+      <el-table-column type="selection"></el-table-column>
+      <el-table-column
+        v-for="(item, index) in listColumn"
+        :key="index"
+        :prop="item.prop"
+        :sortable="item.sortByCustom"
+        :width="item.width"
+        :label="item.label">
+        <template slot-scope="scope">
+          {{ scope.row[item.prop] | filterBlank }}
+        </template>
+    </el-table-column>
+    <el-table-column
+      label="操作"
+      width="130">
+      <template slot-scope="scope">
+        <span class="g-list-action">
+          <i v-if="$hasPermission('config--mod')" class="el-icon-edit" title="编辑" @click="$edit(scope.row)"></i>
+          <i v-if="$hasPermission('config--del')" class="el-icon-close" title="删除" @click="$delConfirm(scope.row)"></i>
+        </span>
+      </template>
+    </el-table-column>
+    </el-table>
+    <el-pagination
+      v-if="totalRecordCount > 0"
+      background
+      :layout="PAGE_CONFIG.layout"
+      :page-sizes="PAGE_CONFIG.pageSizes"
+      :page-size="pageSize"
+      :current-page.sync="pageNo"
+      :total="totalRecordCount"
+      @size-change="$handleSizeChange"
+      @current-change="$getList">
+  </el-pagination>
+  </div>
+  <edit
+    :dialog-visible="dialogVisible"
+    :id="editId"
+    @update-success="$updateSuccess"
+    @close-dialog="$closeDialog"
+  />
+</div>

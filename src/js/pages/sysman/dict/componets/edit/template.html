@@ -1,0 +1,22 @@
+<div class="u-form">
+  <el-form class="hf-dict__form" size="small" label-width="150px" ref="basicForm" :model="basicForm" :rules="rules">
+    <el-form-item label="代码类型代码" prop="codeTypeNum">
+      <el-input maxlength="32" v-model="basicForm.codeTypeNum" placeholder="请输入代码类型代码"></el-input>
+    </el-form-item>
+    <el-form-item label="代码类型名称" prop="codeTypeName">
+      <el-input maxlength="32" v-model="basicForm.codeTypeName" placeholder="请输入代码类型名称"></el-input>
+    </el-form-item>
+    <el-form-item label="规范代码">
+      <el-input maxlength="32" v-model="basicForm.nationNum" placeholder="请输入规范代码"></el-input>
+    </el-form-item>
+    <el-form-item label="备注">
+      <el-input maxlength="100" type="textarea" :rows="2" v-model="basicForm.remark" placeholder="请输入备注"></el-input>
+    </el-form-item>
+  </el-form>
+  <div class="g-c">
+    <hf-ui-button type="primary" @click="$submit" v-if="!isSubmiting">{{ txtSubmit }}</hf-ui-button>
+    <hf-ui-button type="primary" @click="$submit" v-else disabled>{{ txtSubmit }}</hf-ui-button>
+    <hf-ui-button @click="$resetForm">重置表单</hf-ui-button>
+    <hf-ui-button @click="$close">关闭</hf-ui-button>
+  </div>
+</div>

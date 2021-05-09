@@ -1,0 +1,7 @@
+.#{$prefix}-c-bread{
+  .hf-ui-breadcrumb__item:last-child {
+    &:hover{
+      color: $main-color-07;
+    }
+  }
+}

@@ -1,0 +1,12 @@
+.#{$prefix}-p-code {
+  position: relative;
+  height: 100%;
+
+  .g-list-filter .hf-ui-row .hf-ui-col .el-form-item__content {
+    width: calc(100% - 120px);
+  }
+
+  .list-content{
+    margin: 10px 0;
+  }
+}

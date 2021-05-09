@@ -1,0 +1,90 @@
+<div :class="$store.state.appPrefix + '-p-search-target'" v-loading="isLoading">
+  <hf-ui-row class="search-header">
+    <hf-ui-col :span="24">
+      <hf-ui-form ref="searchItems" :model="searchItems"  label-width="auto">
+        <hf-ui-form-item label="标签名称：">
+          <hf-ui-input v-model="searchItems.tagName" placeholder="请输入标签关键字"></hf-ui-input>
+        </hf-ui-form-item>
+
+        <!-- <hf-ui-form-item label="创建日期：">
+          <hf-ui-date-picker
+            v-model="searchItems.createDate"
+            type="daterange"
+            range-separator="-"
+            start-placeholder="开始日期"
+            end-placeholder="结束日期">
+          </hf-ui-date-picker>
+        </hf-ui-form-item> -->
+      </hf-ui-form>
+
+      <div class="search-opt-btns">
+        <hf-ui-button type="primary" @click="doSearch">搜索</hf-ui-button>
+        <hf-ui-button type="secondary" icon="ui-icon-line-currency-addto" @click="handleNew">新增</hf-ui-button>
+      </div>
+    </hf-ui-col>
+  </hf-ui-row>
+
+  <hf-ui-table :data="list" style="width: 100%" border>
+    <hf-ui-table-column v-for="(column, index) in columns"
+      :key="'field_' + index"
+      :prop="column.field"
+      :label="column.label"
+      :width="column.width">
+    </hf-ui-table-column>
+    <hf-ui-table-column label="操作">
+      <template slot-scope="scope">
+        <div class="btns">
+          <hf-ui-button
+            size="medium"
+            @click="handleEdit(scope.$index, scope.row)">编辑</hf-ui-button>
+          <hf-ui-button
+            size="medium"
+            type="danger"
+            @click="handleDelete(scope.$index, scope.row)">删除</hf-ui-button>
+        </div>
+      </template>
+    </hf-ui-table-column>
+  </hf-ui-table>
+
+  <hf-ui-pagination
+    v-if="totalCount > pageSize"
+    layout="prev, pager, next, jumper, total"
+    :page-size="pageSize"
+    @current-change="handlePageChange"
+    :total="totalCount">
+  </hf-ui-pagination>
+
+  <hf-ui-dialog
+    title="编辑标签"
+    :is-border="false"
+    append-to-body
+    class="edit-target-pop"
+    :close-on-click-modal="false"
+    :visible.sync="showEditDialog">
+    <hf-ui-form ref="editForm" :model="editForm"  :rules="rules" label-width="auto">
+      <hf-ui-form-item label="标签名称：" prop="tagName">
+        <hf-ui-input v-model="editForm.tagName" maxlength="20" placeholder="请输入标签名称"></hf-ui-input>
+      </hf-ui-form-item>
+
+      <hf-ui-form-item label="检索规则：" prop="ruleId">
+        <hf-ui-select v-model="editForm.ruleId" placeholder="请选择规则" @change="changeRule">
+          <hf-ui-option
+            v-for="item in ruleList"
+            :key="item.value"
+            :label="item.label"
+            :value="item.value">
+          </hf-ui-option>
+        </hf-ui-select>
+      </hf-ui-form-item>
+
+       <hf-ui-form-item label="标签说明：">
+        <hf-ui-input v-model="editForm.description" type="textarea" maxlength="50" placeholder="请输入标签说明"></hf-ui-input>
+      </hf-ui-form-item>
+
+      <span class="dialog-footer">
+        <hf-ui-button @click="showEditDialog = false">取 消</hf-ui-button>
+        <hf-ui-button type="primary" @click="doEditTag">确 定</hf-ui-button>
+      </span>
+    </hf-ui-form>
+  </hf-ui-dialog>
+</div>

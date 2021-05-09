@@ -1,0 +1,66 @@
+<div :class="[$store.state.appPrefix + '-c-department-edit']" v-loading="isLoading">
+  <div class="edit-wrapper">
+    <hf-ui-form size="small" labhf-ui-width="150px" ref="basicForm" :inline="true" :model="basicForm" :rules="rules">
+      <hf-ui-form-item label="部门名称" prop="name" :error="backendErrForm.name">
+        <hf-ui-input v-model="basicForm.name" maxlength="32" placeholder="请输入部门名称"></hf-ui-input>
+      </hf-ui-form-item>
+
+      <hf-ui-form-item label="部门状态" prop="isLocked">
+        <hf-ui-select v-model="basicForm.isLocked" clearable placeholder="请选择部门状态">
+          <hf-ui-option
+            v-for="status in departmentStatus"
+            :key="status.value"
+            :label="status.label"
+            :value="status.value">
+          </hf-ui-option>
+        </hf-ui-select>
+      </hf-ui-form-item>
+
+      <!-- <hf-ui-form-item label="排序号" prop="departmentKey"
+        :rules="{ type: 'number', required: true,  message: '排序号必须为数字', trigger: 'blur' }"
+        :error="backendErrForm.departmentKey">
+        <hf-ui-input v-model.number="basicForm.departmentKey" maxlength="9" placeholder="请输入排序号"></hf-ui-input>
+      </hf-ui-form-item> -->
+
+      <hf-ui-form-item label="上级部门" prop="parentId">
+        <hf-ui-tree
+          :data="tree"
+          :props="props"
+          :empty-text="''"
+          node-key="departmentId"
+          :default-expand-all="false"
+          :check-strictly="true"
+          :default-checked-keys="[basicForm.parentId]"
+          :default-expanded-keys="[basicForm.parentId]"
+          show-checkbox
+          @check-change="handleCheckChange"
+          ref="tree">
+        </hf-ui-tree>
+      </hf-ui-form-item>
+      <hf-ui-form-item label="绑定设备" prop="equipmentId">
+        <hf-ui-select v-model="basicForm.equipmentId" multiple>
+          <hf-ui-option
+            v-for="item in deviceOptions"
+            :key="item.id"
+            :label="item.label"
+            :value="item.value">
+          </hf-ui-option>
+        </hf-ui-select>
+      </hf-ui-form-item>
+      <hf-ui-form-item label="备注" prop="description" :rules="{ trigger: 'blur' }" :error="backendErrForm.description">
+        <hf-ui-input maxlength="100" type="textarea" :rows="2" v-model="basicForm.description" placeholder="请输入备注"></hf-ui-input>
+      </hf-ui-form-item>
+    </hf-ui-form>
+
+    <menu-tree-select ref="menuTreeSelect" :defaultExpandedKeys="sourceSelectedMenuIdList"
+      :defaultCheckedKeys="sourceSelectedMenuIdList" :defaultExpandAll="false" @changed="$getSelectedMenuIds">
+    </menu-tree-select>
+  </div>
+
+  <div class="g-c">
+    <hf-ui-button type="primary" @click="$submit" v-if="!isLoading">{{ txtSubmit }}</hf-ui-button>
+    <hf-ui-button type="primary" @click="$submit" v-else disabled>{{ txtSubmit }}</hf-ui-button>
+    <hf-ui-button @click="$resetForm">重置表单</hf-ui-button>
+    <hf-ui-button @click="$close">关闭</hf-ui-button>
+  </div>
+</div>

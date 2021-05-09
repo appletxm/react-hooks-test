@@ -1,0 +1,42 @@
+.#{$prefix}-c-department-edit {
+  // position: relative;
+  // height: 95%;
+
+  .edit-wrapper {
+    display: flex;
+    height: 300px;
+    align-content: stretch
+  }
+
+  .hf-ui-form {
+    flex: 55% 1 1;
+    height: 95%;
+    margin-right: 10px;
+    overflow: auto;
+    border-right: 1px solid $main-color-10;
+
+    .hf-ui-form-item__label {
+      width: 80px;
+    }
+
+    .hf-ui-form-item {
+      width: 90%;
+    }
+    .hf-ui-form-item__content {
+      width: calc(100% - 150px);
+    }
+    .hf-ui-select {
+      width: 100%;
+    }
+  }
+
+  .hf-ui-tree {
+    flex: 50% 1 1;
+    overflow-y: auto;
+    height: 95%;
+  }
+
+  .g-c {
+    text-align: right;
+  }
+}

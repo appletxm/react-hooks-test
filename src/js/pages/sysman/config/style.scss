@@ -1,0 +1,14 @@
+.#{$prefix}-p-config {
+  position: relative;
+  height: 100%;
+  .list-content{
+    margin: 10px 0;
+    .table-tit th{
+      background-color: $clr-bg-page-color !important;
+    }
+    .el-pagination{
+      margin: 20px auto;
+      text-align: center;
+    }
+  }
+}

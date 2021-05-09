@@ -1,0 +1,50 @@
+{
+  "name": "hf-vue-pc-admin",
+  "dependencies": {
+    "javascript": {
+      "0-moment": {
+        "version": "2.29.1",
+        "src": "node_modules/moment/min/moment.min.js",
+        "dest": "src/assets/js/moment.<%version%>.min.js"
+      },
+      "1-lodash": {
+        "version": "4.17.21",
+        "src": "node_modules/lodash/lodash.min.js",
+        "dest": "src/assets/js/lodash.<%version%>.min.js"
+      },
+      "2-react": {
+        "version": "17.0.1",
+        "src": "node_modules/react/umd/react.production.min.js",
+        "dest": "src/assets/js/react.<%version%>.min.js"
+      },
+      "3-react-dom": {
+        "version": "17.0.1",
+        "src": "node_modules/react-dom/umd/react-dom.production.min.js",
+        "dest": "src/assets/js/react-dom.<%version%>.min.js"
+      },
+      "4-react-router-dom": {
+        "version": "5.2.0",
+        "src": "node_modules/react-router-dom/umd/react-router-dom.min.js",
+        "dest": "src/assets/js/react-router-dom.<%version%>.min.js"
+      },
+      "5-prop-types": {
+        "version": "15.7.2",
+        "src": "node_modules/prop-types/prop-types.min.js",
+        "dest": "src/assets/js/prop-types.<%version%>.min.js"
+      },
+      "6-antd": {
+        "version": "4.15.4",
+        "src": "node_modules/antd/dist/antd.min.js",
+        "dest": "src/assets/js/antd.<%version%>.min.js"
+      }
+    },
+
+    "css": {
+      "antd": {
+        "version": "4.15.4",
+        "src": "node_modules/antd/dist/antd.min.css",
+        "dest": "src/assets/style/antd.<%version%>/index.min.css"
+      }
+    }
+  }
+}

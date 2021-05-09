@@ -1,0 +1,119 @@
+<div :class="$store.state.appPrefix + '-p-display-content'" v-loading="isLoading">
+  <!-- <div class="setting-row">
+    <label>展示状态</label>
+    <hf-ui-switch
+      v-model="status"
+      active-text="正常展示"
+      inactive-text="关闭展示">
+    </hf-ui-switch>
+  </div> -->
+
+  <div class="setting-row">
+    <div class="search-area">
+      <hf-ui-input maxlength="30" placeholder="请输入标题关键字" v-model="title"></hf-ui-input>
+      <hf-ui-button type="secondary" @click="doSearch">搜索</hf-ui-button>
+    </div>
+
+    <hf-ui-table
+      ref="contentTable"
+      :data="list"
+      style="width: 100%" border>
+
+      <hf-ui-table-column v-for="(column, index) in columns"
+        :key="'field_' + index"
+        :prop="column.field"
+        :label="column.label"
+        :width="column.width">
+      </hf-ui-table-column>
+
+      <hf-ui-table-column
+        label="规则描述"
+        width="250">
+        <template slot-scope="scope" v-if="scope.row.displayRule">
+          <p>播放时长：{{scope.row.displayRule.content.duration}}秒</p>
+          <p>播放屏幕：{{scope.row.displayRule.content.screenSize === 1 ? '全屏' : '小尺寸'}}</p>
+        </template>
+      </hf-ui-table-column>
+
+      <hf-ui-table-column
+        label="状态"
+        width="100">
+        <template slot-scope="scope" v-if="scope.row.displayRule">
+          <p v-if="scope.row.displayRule.valid === '1'">启用宣教中</p>
+        </template>
+      </hf-ui-table-column>
+
+      <hf-ui-table-column label="操作">
+        <template slot-scope="scope">
+          <hf-ui-button
+            size="medium"
+            @click="handleEdit(scope.$index, scope.row)">编辑规则</hf-ui-button>
+
+          <hf-ui-button
+          v-if="scope.row.displayRule"
+          size="medium"
+          @click="changeRuleStatus(scope.$index, scope.row)">{{scope.row.displayRule.valid === '1' ? '停用' : '启用'}}</hf-ui-button>
+        </template>
+      </hf-ui-table-column>
+    </hf-ui-table>
+
+    <hf-ui-pagination
+      v-if="totalCount > pageSize"
+      layout="prev, pager, next, jumper, total"
+      :page-size="pageSize"
+      @current-change="contentPageChange"
+      :total="totalCount">
+    </hf-ui-pagination>
+  </div>
+
+  <!-- <div class="btn-row">
+    <hf-ui-button type="primary" @click="doSubmit">保存</hf-ui-button>
+  </div> -->
+
+  <hf-ui-dialog
+    title="编辑规则"
+    :is-border="false"
+    append-to-body
+    class="edit-rule-pop"
+    :visible.sync="showEditDialog">
+
+    <content-detail :detail-id="editKnowledgeId" :is-read-only="true"></content-detail>
+
+    <hf-ui-form ref="searchForm" :model="ruleForm"  label-width="auto">
+      <hf-ui-form-item label="播放时长：">
+        <hf-ui-input v-model="ruleForm.duration" placeholder="请输入播放时长">
+          <template slot="append">秒</template>
+        </hf-ui-input>
+      </hf-ui-form-item>
+
+      <hf-ui-form-item label="播放屏幕：">
+        <hf-ui-select v-model="ruleForm.screenSize">
+          <hf-ui-option
+            v-for="item in screenOptions"
+            :key="item.value"
+            :label="item.label"
+            :value="item.value">
+          </hf-ui-option>
+        </hf-ui-select>
+      </hf-ui-form-item>
+
+      <hf-ui-form-item label="投放设备：">
+        <hf-ui-select v-model="ruleForm.playerIds" multiple>
+          <hf-ui-option
+            v-for="item in deviceOptions"
+            :key="item.id"
+            :label="item.label"
+            :value="item.value">
+          </hf-ui-option>
+        </hf-ui-select>
+      </hf-ui-form-item>
+
+      <span class="dialog-footer">
+        <hf-ui-button @click="showEditDialog = false">取 消</hf-ui-button>
+        <hf-ui-button type="secondary" @click="doPreview">预 览</hf-ui-button>
+        <hf-ui-button type="primary" @click="doEditRule">确 定</hf-ui-button>
+      </span>
+    </hf-ui-form>
+  </hf-ui-dialog>
+
+</div>

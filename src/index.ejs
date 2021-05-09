@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<meta name="format-detection" content="telephone=no">
+	<title>顺时养生科普与指导内容管理</title>
+	<link rel="shortcut icon" href="assets/images/logo.png" type="image/png"/>
+	<% var cssFiles = htmlWebpackPlugin.options.libFiles.css %>
+	<% for (var index in cssFiles) { %>
+		<link href="<%= htmlWebpackPlugin.options.publicPath + cssFiles[index] %>" rel="stylesheet" />
+	<% } %>
+</head>
+
+<body>
+	<div id="app" class="app"></div>
+	<script type="text/javascript" src="<%= htmlWebpackPlugin.options.publicPath + 'js/cfg.js?timer=0001' %>" charset="utf-8"></script>
+	<% var jsFiles = htmlWebpackPlugin.options.libFiles.js %>
+	<% for (var index in jsFiles) { %>
+		<script type="text/javascript" src="<%= htmlWebpackPlugin.options.publicPath + jsFiles[index] %>" charset="utf-8"></script>
+	<% } %>
+</body>
+
+</html>

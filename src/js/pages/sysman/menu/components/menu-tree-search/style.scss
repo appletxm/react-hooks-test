@@ -1,0 +1,25 @@
+.#{$prefix}-c-menu-tree-search {
+  .tree-search{
+    min-width: 230px;
+    .el-input__suffix {
+      right: 10px;
+    }
+  }     
+}
+
+.tree-dialog {
+  .filter {
+    margin-bottom: 10px;
+  }
+  .body {
+    min-height: 150px;
+    max-height: 250px;
+    overflow-y: auto;
+  }
+
+  .el-tree-node.is-current {
+    .el-tree-node__content {
+      @include getBgColorAlpha($main-color-03, 0.3);
+    }
+  }
+}

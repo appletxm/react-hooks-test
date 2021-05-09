@@ -1,0 +1,31 @@
+.#{$prefix}-p-role {
+  .add-user{
+    float: right;
+    .dialog-body{
+      .dialog-filter-input{
+        margin-bottom: 10px;
+        .el-checkbox__label {
+          font-size: 13px;
+        }
+        .el-input-group__append {
+          padding: 0;
+          .hf-ui-button {
+            border: 0;
+            background-color: transparent;
+            width: 100%
+          }
+        }
+      }
+      .dialog-filter-select{
+        .el-input {
+          width: 95px;
+        }
+      }
+  
+      .list{
+        max-height: 200px;
+        overflow-y: auto;
+      }
+    }
+  }
+}

@@ -1,0 +1,32 @@
+<div class="auth-user" v-loading="isListLoaing">
+  <div class="filter-block">
+    <hf-ui-button class="del-btn" :disabled="selectedItems.length < 1" @click="$delConfirm" size="medium"
+      type="important">
+      删除用户
+    </hf-ui-button>
+
+    <add-user :id="id" @change="$changeUser"></add-user>
+
+    <el-input size="small" class="filter-search" placeholder="请输入关键字"
+      @keyup.enter.native="$getUserList(DEFAULT_PAGE_NO)" v-model="searchVal">
+      <el-select class="filter-search-select" v-model="searchType" slot="prepend" placeholder="请选择">
+        <el-option v-for="item in searchTypeList" :key="item.value" :label="item.label" :value="item.value">
+        </el-option>
+      </el-select>
+      <el-button slot="append" icon="el-icon-search" @click="$getUserList(DEFAULT_PAGE_NO)"></el-button>
+    </el-input>
+  </div>
+
+  <el-table size="small" ref="userListTable" empty-text="-" tooltip-effect="dark" :data="userList"
+    @sort-change="$setSort" @selection-change="$userSelChange">
+    <el-table-column type="selection">
+    </el-table-column>
+    <template v-for="(item,key) in searchTypeList">
+      <el-table-column sortable="custom" :key="key" :prop="item.value" :label="item.label">
+      </el-table-column>
+    </template>
+  </el-table>
+  <el-pagination small v-if="totalCount > 0" background class="g-pagination" :layout="PAGE_CONFIG.simpleLayout"
+    :page-size="pageSize" :current-page.sync="pageNo" :total="totalCount" @current-change="$getUserList">
+  </el-pagination>
+</div>

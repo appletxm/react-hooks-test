@@ -1,0 +1,60 @@
+@import "./components/style";
+
+.#{$prefix}-p-user {
+  position: relative;
+  // height: 100%;
+  .list-content{
+    margin: 10px 0;
+    .table-tit th{
+      background-color: $clr-bg-page-color !important;
+    }
+    .hf-ui-pagination{
+      margin: 20px auto;
+      text-align: center;
+    }
+    .action{
+      i {
+        font-size: $font-16;
+        padding: 2px;
+        border-radius: 3px;
+        &:hover{
+          @include getBgColorAlpha($main-color-05, 0.1);
+        }
+      }
+    }
+
+    .hf-ui-button+.hf-ui-button {
+      margin-left: 2px;
+    }
+  }
+
+  .hf-ui-form-item--medium .hf-ui-form-item__content {
+    width: 75%;
+  }
+  .hf-ui-form-item__label {
+    margin-right: 0;
+  }
+
+  .hf-ui-row {
+    border: 1px solid #eee;
+    border-radius: 4px;
+    padding: 10px;
+    margin-bottom: 20px;
+    .hf-ui-form-item {
+      margin-bottom: 0;
+    }
+
+    .hf-ui-col-4 {
+      text-align: right;
+    }
+  }
+
+  .hf-ui-table__empty-block {
+    border-bottom: 1px solid #eee;
+  }
+
+  .hf-ui-pagination {
+    text-align: center;
+    margin-top: 20px;
+  }
+}

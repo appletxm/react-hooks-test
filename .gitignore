@@ -1,0 +1,27 @@
+.DS_Store
+node_modules/
+dist/examples
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+test/unit/coverage
+yarn.lock
+package-lock.json
+
+dist
+deploy
+coverage
+themes
+dist/user-theme
+tmp
+uploads
+
+# Editor directories and files
+.idea
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.tar
+*.gz
+cfg.js

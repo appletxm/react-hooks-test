@@ -1,0 +1,26 @@
+.#{$prefix}-p-search-target{
+
+  .search-header .hf-ui-form .hf-ui-form-item .hf-ui-form-item__content {
+    margin-left: 70px !important;
+  }
+
+  .hf-ui-pagination {
+    text-align: center;
+    margin: 20px 0;
+  }
+}
+
+.edit-target-pop {
+  .hf-ui-form-item__label {
+    margin-right: 10px;
+  }
+
+  .dialog-footer {
+    display: block;
+    text-align: right;
+  }
+
+  .subtype-select {
+    width: 100%;
+  }
+}
