@@ -68,13 +68,13 @@ module.exports = {
         usedExports: true,
         sideEffects: true,
         concatenateModules: true,
-        noEmitOnErrors: true,
+        emitOnErrors: true,
         splitChunks: {
           minSize: 30000,
           minChunks: 1,
           maxAsyncRequests: 5,
           maxInitialRequests: 3,
-          name: true,
+          // name: true,
           chunks: 'all',
           cacheGroups: {
             styles: {
@@ -117,9 +117,9 @@ module.exports = {
       cssPath = 'css/[name].min.[contenthash:7].css'
       // cssChunkPath = 'css/[id].min.[chunkhash:7].css'
 
-      webpackConfig.plugins.push(
-        new webpack.optimize.OccurrenceOrderPlugin()
-      )
+      // webpackConfig.plugins.push(
+      //   new webpack.optimize.OccurrenceOrderPlugin()
+      // )
     }
 
     webpackConfig.plugins.push(

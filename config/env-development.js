@@ -2,7 +2,7 @@ module.exports = {
   port: 8019, // 本地服务端口号
   api: '', // 应用侧服务端接口前缀
   proxy: {
-    needOpen: false, // 需不需要开启本地代理
+    needOpen: true, // 需不需要开启本地代理
     url: 'http://111.230.28.173:8081' // 代理应用侧服务端接口host, needOpen配置项为true时生效
   },
   get publicPath() {

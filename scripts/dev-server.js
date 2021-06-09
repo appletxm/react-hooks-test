@@ -9,7 +9,6 @@ const httpProxyMiddleware = require('http-proxy-middleware')
 const envConfig = require('../config/env')
 const webpackConfig = require('../config/webpack.config')
 const serverRouter = require('./server-router')
-const routerPreview = require('./server-router-preview')
 const app = express()
 const compiler = webpack(webpackConfig)
 const envKey = process.argv[2] || 'development'
@@ -44,6 +43,7 @@ const apiConfig = ['/api/*']
 // app.use(['*/oss/uploadFile'], upload.single('file'), function (req, res) {
 //   serverRouter['uploadSingleFile'](req, res)
 // })
+
 app.use(apiConfig, function (req, res) {
   if (proxyTarget && proxyTarget['needOpen'] === true) {
     httpProxyMiddleware({target: proxyTarget['url'], changeOrigin: true})(req, res)
@@ -51,6 +51,44 @@ app.use(apiConfig, function (req, res) {
     serverRouter['/api'](req, res) // only mock data hint here
   }
 })
+
+// app.use(apiConfig, function(req, res) {
+//   // https://ssor.stgairasia.com/config/v2/clients/by-origin
+
+//   const options = {
+//     hostname: 'ssor.stgairasia.com',
+//     port: 443,
+//     path: '/config/v2/clients/by-origin',
+//     method: 'GET',
+//     headers: {
+//       'Access-Control-Allow-Credentials': true,
+//       'Content-Type': "application/json",
+//       'origin': "https://servicewechat.com"
+//     }
+//   }
+//   const proxyReq = https.request(options, (proxyRes) => {
+//     console.log('statusCode:', proxyRes.statusCode);
+//     console.log('headers:', proxyRes.headers);
+
+//     const data = []
+
+//     proxyRes.on('data', (d) => {
+//       // process.stdout.write(d);
+//       console.info('===d==', d)
+//       data.push(d)
+//     });
+
+//     proxyRes.on('end', () => {
+//       console.info('====end====')
+//     })
+
+//   })
+
+//   proxyReq.on('error', (e) => {
+//     console.error(e);
+//   });
+//   proxyReq.end()
+// })
 
 app.use(['/*assets/images/*'], function (req, res) {
   serverRouter['image'](req, res, compiler)

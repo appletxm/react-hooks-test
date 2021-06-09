@@ -65,11 +65,11 @@ module.exports = function (envKeyWord, env) {
           test: /\.(sa|sc|c)ss$/,
           use: [
             {
-              loader: MiniCssExtractPlugin.loader,
-              options: {
-                hmr: isDev,
-                reloadAll: true
-              },
+              loader: MiniCssExtractPlugin.loader
+              // options: {
+              //   hmr: isDev,
+              //   reloadAll: true
+              // }
             },
             'css-loader',
             {
