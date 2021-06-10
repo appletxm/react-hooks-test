@@ -34,8 +34,11 @@ const middleWare = webpackDevMiddleware(compiler, {
 })
 
 app.use(middleWare)
-app.use(webpackHotMiddleware(compiler))
-// app.use(express.static(__dirname + '/../dist'))
+app.use(webpackHotMiddleware(compiler, {
+  heartbeat: 2000
+}))
+
+app.use(express.static(path.join(__dirname, './dist')))
 app.use('*', serverRouter['*'])
 
 const apiConfig = ['/api/*']

@@ -5,7 +5,7 @@ const OptimizeCSSAssetsPlugin   = require('optimize-css-assets-webpack-plugin')
 const HtmlWebPlugin = require('html-webpack-plugin')
 const CopyPlugin = require('copy-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
-const hotMiddlewareScript = 'webpack-hot-middleware/client?reload=true'
+const hotMiddlewareScript = 'webpack-hot-middleware/client?path=/__webpack_hmr&reload=true'
 
 module.exports = {
   getEnvCfg: function (envKeyWord) {
@@ -117,9 +117,9 @@ module.exports = {
       cssPath = 'css/[name].min.[contenthash:7].css'
       // cssChunkPath = 'css/[id].min.[chunkhash:7].css'
 
-      // webpackConfig.plugins.push(
-      //   new webpack.optimize.OccurrenceOrderPlugin()
-      // )
+      webpackConfig.plugins.push(
+        new webpack.optimize.OccurrenceOrderPlugin()
+      )
     }
 
     webpackConfig.plugins.push(

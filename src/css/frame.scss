@@ -2,10 +2,10 @@
 .#{$prefix}-my-app {
   position: relative;
   height: 100vh;
-  
+
   .#{$prefix}-navigator {
     height: $header-height;
-    background-color: #f8f8f8;
+    background-color: blue;
     position: absolute;
     top: 0;
     left: 0;

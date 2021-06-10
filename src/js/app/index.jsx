@@ -61,7 +61,7 @@ function App(props) {
   return (
     <div className={ appPrefix + "-my-app"}>
       <div className={ appPrefix + "-navigator" }><b>{ name }</b></div>
-      <div className= { appPrefix + "-left-menu" }>left menu</div>
+      <div className= { appPrefix + "-left-menu" }>left menu 888</div>
       <div className={ appPrefix + "-main" }>
         {props.children}
       </div>
