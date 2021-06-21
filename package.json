@@ -9,7 +9,8 @@
     "debug": "node --inspect scripts/dev-server.js development",
     "start": "npm run dev",
     "sync": "node scripts/sync-dependencies.js",
-    "build": "node scripts/build.js production"
+    "build": "node scripts/build.js production",
+    "lint": "eslint --ext .js,.jsx src/js/ --fix"
   },
   "repository": {
     "type": "git",

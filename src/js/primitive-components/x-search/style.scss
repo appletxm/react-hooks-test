@@ -1,0 +1,12 @@
+.#{$prefix}-c-x-search {
+  background: orange;
+
+  &::shadow {
+    span {
+      background: green;
+    }
+    a {
+      color: white;
+    }
+  }
+}

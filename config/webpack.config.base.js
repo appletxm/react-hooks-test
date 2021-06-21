@@ -91,7 +91,7 @@ module.exports = function (envKeyWord, env) {
       ]
     },
     resolve: {
-      extensions: ['.js', '.jsx', '.scss', '.css', '.html', '.json'],
+      extensions: ['.jsx', '.js', '.scss', '.css', '.html', '.json'],
       alias: {
         '@': path.join(__dirname, '../src/'),
         'env.cfg': '',

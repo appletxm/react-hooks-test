@@ -55,20 +55,75 @@
 
 // export default App;
 
-function App(props) {
-  const { name, appPrefix } = props
+// function App(props) {
+//   const { name, appPrefix } = props
 
-  return (
-    <div className={ appPrefix + "-my-app"}>
-      <div className={ appPrefix + "-navigator" }><b>{ name }</b></div>
-      <div className= { appPrefix + "-left-menu" }>left menu 888</div>
-      <div className={ appPrefix + "-main" }>
-        {props.children}
+//   console.info(props)
+
+//   return (
+//     <div className={ appPrefix + "-my-app"}>
+//       <BrowserRouter>
+//         <div className={ appPrefix + "-navigator" }><b>{ name }</b></div>
+//         <div className= { appPrefix + "-left-menu" }>
+//             <ul>
+//               <li><Link to="/home">home page</Link></li>
+//               <li><Link to="/about">about page</Link></li>
+//             </ul>
+//         </div>
+//         <div className={ appPrefix + "-main" }>
+//           {props.children}
+//         </div>
+//       </BrowserRouter>
+//     </div>
+//   )
+// }
+
+import AppCtx from '../providers/app-ctx';
+
+const { Link, BrowserRouter } = ReactRouterDOM;
+
+const App = class App extends React.Component {
+  static contextType = AppCtx
+
+  // constructor(props) {
+  //   super(props);
+  // }
+
+  componentDidUpdate() {
+    console.info('**did update***', this.context);
+  }
+
+  componentDidMount() {
+    console.info('***did mount**', this.context);
+  }
+
+  render() {
+    const { appPrefix, name, children } = this.props;
+    console.info('***render**', this.context);
+
+    return (
+      <div className={ `${appPrefix}-my-app`}>
+        <BrowserRouter>
+          <div className={ `${appPrefix}-navigator` }><b>{ name }</b></div>
+          <div className= { `${appPrefix}-left-menu` }>
+              <ul>
+                <li><Link to="/home">home page</Link></li>
+                <li><Link to="/about">about page</Link></li>
+              </ul>
+          </div>
+          <div className={ `${appPrefix}-main` }>
+            {children}
+          </div>
+        </BrowserRouter>
       </div>
-    </div>
-  )
-}
+    );
+  }
+};
 
-export default App
+App.propTypes = {
+  appPrefix: PropTypes.string,
+  name: PropTypes.string,
+  children: PropTypes.element.isRequired,
+};
 
-
+export default App;

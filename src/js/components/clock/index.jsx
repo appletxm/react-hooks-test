@@ -1,26 +1,26 @@
-const Clock = class extends React.Component {
+const Clock = class Clock extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      date: new Date()
+      date: new Date(),
     };
   }
 
   componentDidMount() {
     this.timerID = setInterval(
       () => this.tick(),
-      1000
+      1000,
     );
   }
 
   componentWillUnmount() {
-    clearInterval(this.timerID)
+    clearInterval(this.timerID);
   }
 
   tick() {
     this.setState({
-      date: new Date()
-    })
+      date: new Date(),
+    });
   }
 
   render() {
@@ -31,6 +31,6 @@ const Clock = class extends React.Component {
       </div>
     );
   }
-}
+};
 
-export default Clock
+export default Clock;

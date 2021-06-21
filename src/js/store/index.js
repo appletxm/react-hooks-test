@@ -1,8 +1,8 @@
 /* global Vuex */
 
-import mutations from './mutations'
-import user from './modules/user'
-import leftMenu from './modules/left-menu'
+import mutations from './mutations';
+import user from './modules/user';
+import leftMenu from './modules/left-menu';
 
 export const getStore = (state) => new Vuex.Store({
   state,
@@ -10,6 +10,8 @@ export const getStore = (state) => new Vuex.Store({
   mutations,
   modules: {
     user,
-    leftMenu
-  }
-})
+    leftMenu,
+  },
+});
+
+export default getStore;

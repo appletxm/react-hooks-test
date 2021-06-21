@@ -1,9 +1,9 @@
-const { api, isMock, proxy } = require('env.cfg')
+const { api, isMock, proxy } = require('env.cfg');
 
-const needProxy = (proxy && proxy['needOpen']) || isMock
-let apiHost = window.appInfo && window.appInfo.apiHost ? window.appInfo.apiHost : ''
+const needProxy = (proxy && proxy.needOpen) || isMock;
+let apiHost = window.appInfo && window.appInfo.apiHost ? window.appInfo.apiHost : '';
 
-apiHost = (needProxy ? '' : apiHost) + api
+apiHost = (needProxy ? '' : apiHost) + api;
 
 export default {
   // User
@@ -61,5 +61,5 @@ export default {
   removeRule: `${apiHost}/api/search/removeRule/`,
 
   // upload ad
-  uploadAd: `${apiHost}/api/attachment/adUpload`
-}
+  uploadAd: `${apiHost}/api/attachment/adUpload`,
+};

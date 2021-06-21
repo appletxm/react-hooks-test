@@ -1,4 +1,5 @@
-import Avatar from 'components/avatar'
+import Avatar from 'components/avatar';
+
 function UserInfo(props) {
   return (
     <div className="UserInfo">
@@ -10,4 +11,8 @@ function UserInfo(props) {
   );
 }
 
-export default UserInfo
+export default UserInfo;
+
+UserInfo.propTypes = {
+  user: PropTypes.object,
+};

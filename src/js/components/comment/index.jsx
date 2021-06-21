@@ -1,4 +1,4 @@
-import UserInfo from 'components/user-info'
+import UserInfo from 'components/user-info';
 
 function Comment(props) {
   return (
@@ -14,4 +14,10 @@ function Comment(props) {
   );
 }
 
-export default Comment
+Comment.propTypes = {
+  author: PropTypes.object,
+  text: PropTypes.string,
+  date: PropTypes.string,
+};
+
+export default Comment;

@@ -12,7 +12,7 @@ function sortByAsc(a, b) {
 export const listToTree = function listToTree(data, sOptions) {
   // 拷贝原数组
   const list = [...data];
-  const options = { ...sOptions }
+  const options = { ...sOptions };
   // 默认是降序排
   const sortWay = options.sortByDesc ? sortByDesc : sortByAsc;
   const ID_KEY = options.idKey || 'id';
@@ -43,3 +43,5 @@ export const listToTree = function listToTree(data, sOptions) {
   }
   return tree;
 };
+
+export default listToTree;

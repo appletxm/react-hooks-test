@@ -7,4 +7,8 @@ function Avatar(props) {
   );
 }
 
-export default Avatar
+Avatar.propTypes = {
+  user: PropTypes.object,
+};
+
+export default Avatar;

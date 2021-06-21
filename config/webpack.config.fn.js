@@ -61,7 +61,7 @@ module.exports = {
           new TerserJSPlugin({
             extractComments: '/@extract/i',
             sourceMap: true
-          }), 
+          }),
           new OptimizeCSSAssetsPlugin()
         ],
         providedExports: true,
@@ -117,9 +117,9 @@ module.exports = {
       cssPath = 'css/[name].min.[contenthash:7].css'
       // cssChunkPath = 'css/[id].min.[chunkhash:7].css'
 
-      webpackConfig.plugins.push(
-        new webpack.optimize.OccurrenceOrderPlugin()
-      )
+      // webpackConfig.plugins.push(
+      //   new webpack.optimize.OccurrenceOrderPlugin()
+      // )
     }
 
     webpackConfig.plugins.push(

@@ -1,11 +1,11 @@
 /* globals Vue */
-import axios from 'axios'
-import { getTokenFromCookie } from 'common/auth'
-import { qsStringfy } from 'utils/qs'
-import * as errorHandler from 'common/error-handler'
-import { ERROR_CODE } from 'common/consts'
+import axios from 'axios';
+import { getTokenFromCookie } from 'common/auth';
+import { qsStringfy } from 'utils/qs';
+import * as errorHandler from 'common/error-handler';
+import { ERROR_CODE } from 'common/consts';
 
-const headerToken = 'Auth_Token'
+const headerToken = 'Auth_Token';
 
 export const contentTypeWww = 'application/x-www-form-urlencoded';
 export const contentTypeJson = 'application/json;charset=UTF-8';
@@ -13,18 +13,18 @@ export const defaultTimeout = 60 * 1000; // 改为一分钟！
 export const longTimeout = 80 * 1000;
 
 function errorForAwaitHandle(error) {
-  const msg = (error.message || error.errorMessage) || error.detailMessage
+  const msg = (error.message || error.errorMessage) || error.detailMessage;
   if (msg) {
     Vue.prototype.$message({
       message: msg,
-      type: 'warning'
-    })
+      type: 'warning',
+    });
   }
 
   return Promise.resolve({
     code: ERROR_CODE,
-    message: msg
-  })
+    message: msg,
+  });
 }
 
 /* eslint-disable */

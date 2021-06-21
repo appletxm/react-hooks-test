@@ -1,13 +1,15 @@
 // import CryptoJS from 'crypto-js/crypto-js';
 
 export const qsStringfy = function qsStringfy(data) {
-  const obj = { ...data }
-  data = ''
-  for (const i in obj) {
-    data = data + '&' + i + '=' + obj[i]
-  }
-  return data.substr(1)
-}
+  let str = '';
+  const keys = Object.keys(data);
+
+  keys.forEach((key) => {
+    str = `${str ? '&' : ''}${key}=${data[key]}`;
+  });
+
+  return str.substr(1);
+};
 
 // 获取地址栏里的参数
 export const getUrlParams = function getUrlParams(queryName) {
@@ -25,4 +27,4 @@ export const getUrlParams = function getUrlParams(queryName) {
   });
 
   return decodeURIComponent(result[queryName]);
-}
+};

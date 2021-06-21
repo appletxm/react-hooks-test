@@ -70,27 +70,27 @@ export const PAGE_CONFIG = {
   defaultPageNo: 1,
 };
 
-export const DEFAULT_ERROR_MSG = '网络有问题，请稍后再试'
+export const DEFAULT_ERROR_MSG = '网络有问题，请稍后再试';
 
-export const WEB_TITLE_PREFIX = '后台管理系统'
+export const WEB_TITLE_PREFIX = '后台管理系统';
 
-export const ERROR_CODE = 98511
+export const ERROR_CODE = 98511;
 export const SCREEN_SIZE_OPTIONS = [
   {
     value: 0,
-    label: '小尺寸'
+    label: '小尺寸',
   },
 
   {
     value: 1,
-    label: '全屏'
-  }
-]
+    label: '全屏',
+  },
+];
 
 export const PLAYER_POSITIONS = [
   {
     id: 'te02-2256',
     label: '研修楼7楼大厅护士站',
-    value: 'te02-2256'
-  }
-]
+    value: 'te02-2256',
+  },
+];
