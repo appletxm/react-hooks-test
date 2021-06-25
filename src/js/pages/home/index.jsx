@@ -1,6 +1,7 @@
 import Button from 'components/button';
 import Input from 'components/input';
-import AppCtx from '../../providers/app-ctx';
+import AppCtx from 'providers/app-ctx';
+import Counter from 'hooks/counter';
 
 class Home extends React.Component {
   static contextType = AppCtx
@@ -28,6 +29,7 @@ class Home extends React.Component {
         <Button ref={this.ref}>test button 6666</Button>
         <Input inputRef={(el) => { console.info('###', el); this.inputEl = el; }}/>
         <x-search name="web components" class="x-search-red"></x-search>
+        <Counter></Counter>
       </div>
     );
   }

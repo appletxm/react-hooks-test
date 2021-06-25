@@ -16,12 +16,14 @@ const eslintCfg = {
   'extends': [
     'airbnb-base',
     'plugin:react/recommended',
-    'plugin:jsx-a11y/recommended'
+    'plugin:jsx-a11y/recommended',
+    'plugin:react-hooks/recommended'
   ],
   'plugins': [
     'import',
     'react',
-    'jsx-a11y'
+    'jsx-a11y',
+    'react-hooks'
   ],
   'rules': {
     'no-param-reassign': 0,
