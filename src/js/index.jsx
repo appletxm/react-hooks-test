@@ -7,6 +7,18 @@ import { Provider, cssGlobals } from './providers/app-ctx';
 
 const ctxValue = { appPrefix: cssGlobals.appPrefix, name: 9999 };
 
+// function testable(...arg) {
+//   console.info('****', arg);
+// }
+// @testable(true)
+// class test {
+//   constructor(...arg) {
+//     console.info('=====', arg);
+//   }
+// }
+
+// test(666);
+
 ReactDOM.render((
   <ErrorBoundary>
     <Provider value={ctxValue}>
