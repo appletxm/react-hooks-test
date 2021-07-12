@@ -17,20 +17,20 @@
         "src": "node_modules/mobx/dist/mobx.umd.production.min.js",
         "dest": "src/assets/js/mobx.<%version%>.min.js"
       },
-      "3-react": {
+      "3-mobx-react-lite": {
+        "version": "3.2.0",
+        "src": "node_modules/mobx-react-lite/dist/mobxreactlite.umd.production.min.js",
+        "dest": "src/assets/js/mobx-react-lite.<%version%>.min.js"
+      },
+      "4-react": {
         "version": "17.0.2",
         "src": "node_modules/react/umd/react.production.min.js",
         "dest": "src/assets/js/react.<%version%>.min.js"
       },
-      "3-react-dom": {
+      "5-react-dom": {
         "version": "17.0.2",
         "src": "node_modules/react-dom/umd/react-dom.production.min.js",
         "dest": "src/assets/js/react-dom.<%version%>.min.js"
-      },
-      "4-mobx-react-lite": {
-        "version": "3.2.0",
-        "src": "node_modules/mobx-react-lite/dist/mobxreactlite.umd.development.js",
-        "dest": "src/assets/js/mobx-react-lite.<%version%>.min.js"
       },
       "6-react-router-dom": {
         "version": "5.2.0",
@@ -50,6 +50,11 @@
     },
 
     "css": {
+      "antd": {
+        "version": "4.15.4",
+        "src": "node_modules/antd/dist/antd.min.css",
+        "dest": "src/assets/style/antd.<%version%>/index.min.css"
+      }
     }
   }
 }

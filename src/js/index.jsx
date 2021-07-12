@@ -8,11 +8,12 @@ import { Provider, cssGlobals } from './providers/app-ctx';
 import testDecorator from './test/decorator'
 
 const ctxValue = { appPrefix: cssGlobals.appPrefix, name: 9999 };
+const { render } = ReactDOM
 
 const ins = new testDecorator(666);
 console.log('**decorate5**', ins.txm, ins.testLog())
 
-ReactDOM.render((
+render((
   <ErrorBoundary>
     <Provider value={ctxValue}>
       <App name={'txm'} appPrefix={cssGlobals.appPrefix}>
@@ -20,4 +21,5 @@ ReactDOM.render((
       </App>
     </Provider>
   </ErrorBoundary>
-), document.querySelector('body'));
+), document.querySelector('#app'))
+

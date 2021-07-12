@@ -21,14 +21,15 @@ module.exports = {
       // }
     ],
     ['@babel/plugin-proposal-object-rest-spread'], // for object rest or destruction
-    ['@babel/plugin-proposal-decorators', {
-      legacy: true
-    }], // for decorators
-    ['@babel/plugin-transform-spread', {
-      loose: true
-    }], // for Array rest or destruction
-    '@babel/plugin-syntax-dynamic-import' // for module lazy load
+    ['@babel/plugin-proposal-decorators', { legacy: true }], // for decorators
+    ['@babel/plugin-transform-spread', { loose: true }], // for Array rest or destruction
+    '@babel/plugin-syntax-dynamic-import', // for module lazy load
+    ['@babel/plugin-proposal-class-properties', { loose: false }] // for mobx
   ],
+
+  'assumptions': {
+    'setPublicClassFields': false
+  },
 
   env: {
     test: {
