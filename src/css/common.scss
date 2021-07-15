@@ -29,7 +29,7 @@ h1, p {
 
 input, button, select, textarea {
   outline: none;
-  -webkit-appearance: none;
+  // -webkit-appearance: none;
   font-family: $font-family;
   border-radius: 0;
 }
