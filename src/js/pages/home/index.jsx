@@ -4,11 +4,11 @@ import AppCtx from 'providers/app-ctx';
 import Counter from 'hooks/counter';
 import FriendList from 'components/friend-list';
 import eventBus from 'common/event-bus';
-import Counter2 from 'hooks/counter/reducer-version'
+import Counter2 from 'hooks/counter/reducer-version';
 // import CityList from 'components/city-list'
-import { todoList } from 'store/home'
-import TodoListView from 'components/todo-list-view'
-import MobxTest from 'components/mobx-test'
+import { todoList } from 'store/home';
+import TodoListView from 'components/todo-list-view';
+import MobxTest from 'components/mobx-test';
 
 const friendData = [
   { id: 1, name: 'Phoebe' },

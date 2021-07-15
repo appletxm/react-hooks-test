@@ -1,7 +1,7 @@
 const Cities = [
   'Amsterdam',
   'London',
-  'Madrid'
+  'Madrid',
 ];
 
 export const mapStore = () => {
@@ -14,4 +14,4 @@ export const mapStore = () => {
   return store;
 };
 
-export default mapStore
+export default mapStore;

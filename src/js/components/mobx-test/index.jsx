@@ -1,14 +1,14 @@
-const { useObserver, useLocalStore } = mobxReactLite
+const { useObserver, useLocalStore } = mobxReactLite;
 
 export default function Person() {
-  const person = useLocalStore(() => ({ name: 'John' }))
+  const person = useLocalStore(() => { 'John'; });
 
   // const person = {name: 'Jhon'}
 
-  return useObserver(() =>
-    <div>
+  /* eslint-disable */
+  return useObserver(() => <div>
       {person.name}
       <button onClick={() => (person.name = 'Mike')}>No! I am Mike</button>
-    </div>
-  )
+  </div>);
+  /* eslint-enable */
 }

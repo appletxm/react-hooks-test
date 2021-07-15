@@ -5,13 +5,13 @@ import App from './app/index.jsx';
 import getRoutes from './router/index.jsx';
 import { Provider, cssGlobals } from './providers/app-ctx';
 
-import testDecorator from './test/decorator'
+import TestDecorator from './test/decorator';
 
 const ctxValue = { appPrefix: cssGlobals.appPrefix, name: 9999 };
-const { render } = ReactDOM
+const { render } = ReactDOM;
 
-const ins = new testDecorator(666);
-console.log('**decorate5**', ins.txm, ins.testLog())
+const ins = new TestDecorator(666);
+console.log('**decorate5**', ins.txm, ins.testLog());
 
 render((
   <ErrorBoundary>
@@ -21,5 +21,4 @@ render((
       </App>
     </Provider>
   </ErrorBoundary>
-), document.querySelector('#app'))
-
+), document.querySelector('#app'));

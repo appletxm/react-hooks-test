@@ -1,10 +1,10 @@
-import ToDo from './todo'
-import ToDoList from './todo-list'
-import mapStore from './map'
+import ToDo from './todo';
+import ToDoList from './todo-list';
+import * as map from './map';
 
-const todoList = new ToDoList([new ToDo("Get Coffee"), new ToDo("Write simpler code")])
+export const todoList = new ToDoList([new ToDo('Get Coffee'), new ToDo('Write simpler code')]);
 
-export {
+export default {
   todoList,
-  mapStore
-}
+  map,
+};

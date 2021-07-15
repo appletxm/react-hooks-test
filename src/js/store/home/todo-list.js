@@ -1,19 +1,19 @@
-const { makeObservable, observable, computed } = mobx
+const { makeObservable, observable, computed } = mobx;
 
 class TodoList {
   todos = []
 
   get unfinishedTodoCount() {
-    return this.todos.filter(todo => !todo.finished).length
+    return this.todos.filter((todo) => !todo.finished).length;
   }
 
   constructor(todos) {
-      makeObservable(this, {
-          todos: observable,
-          unfinishedTodoCount: computed
-      })
-      this.todos = todos
+    makeObservable(this, {
+      todos: observable,
+      unfinishedTodoCount: computed,
+    });
+    this.todos = todos;
   }
 }
 
-export default TodoList
+export default TodoList;

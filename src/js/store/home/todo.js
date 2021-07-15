@@ -1,22 +1,24 @@
-const { makeObservable, observable, action } = mobx
+const { makeObservable, observable, action } = mobx;
 
 class Todo {
   id = Math.random()
-  title = ""
+
+  title = ''
+
   finished = false
 
   constructor(title) {
-      makeObservable(this, {
-        title: observable,
-        finished: observable,
-        toggle: action
-      })
-    this.title = title
+    makeObservable(this, {
+      title: observable,
+      finished: observable,
+      toggle: action,
+    });
+    this.title = title;
   }
 
   toggle() {
-    this.finished = !this.finished
+    this.finished = !this.finished;
   }
 }
 
-export default Todo
+export default Todo;
