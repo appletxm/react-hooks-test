@@ -9,6 +9,7 @@ import Counter2 from 'hooks/counter/reducer-version';
 import { todoList } from 'store/home';
 import TodoListView from 'components/todo-list-view';
 import MobxTest from 'components/mobx-test';
+import autoTest from 'store/home/auto-test'
 
 const friendData = [
   { id: 1, name: 'Phoebe' },
@@ -37,6 +38,14 @@ class Home extends React.Component {
     console.info('====', this.ref.current);
     // this.inputEl.focus()
     console.info('====', this.inputEl);
+
+
+    autoTest[0].completed = false
+    // Prints: 'Remaining: Spoil tea, Make coffee'
+    autoTest[2] = { title: "Take a nap", completed: false }
+    // Prints: 'Remaining: Spoil tea, Make coffee, Take a nap'
+    autoTest.shift()
+    // Prints: 'Remaining: Make coffee, Take a nap'
   }
 
   render() {
@@ -57,6 +66,14 @@ class Home extends React.Component {
         <TodoListView todoList={todoList}></TodoListView>
 
         <MobxTest></MobxTest>
+
+        <ul>
+          {
+            autoTest.map((item, index) => {
+              return (<li key={'test-auto-' + index}>{item.title}</li>)
+            })
+          }
+        </ul>
       </div>
     );
   }
