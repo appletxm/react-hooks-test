@@ -1,0 +1,15 @@
+{
+  "retCode": "000000",
+  "retDesc": "操作成功",
+  "data": {
+    "id": "1206893744809377794",
+    "createdDt": "2019-12-17 19:07:46",
+    "updatedDt": "2019-12-17 19:07:46",
+    "remark": "",
+    "roleName": "普通角色2",
+    "roleType": "0",
+    "roleNum": null,
+    "status": "0",
+    "sortNo": 5
+  }
+}

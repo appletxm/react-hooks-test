@@ -1,0 +1,81 @@
+{
+  "code": 200,
+  "retDesc":"操作成功",
+  "data":
+  {
+    "curPageSize": 10,
+    "pageNo": 1,
+    "pageSize": 10,
+    "totalPage": 1,
+    "totalCount": 4,
+    "list":[
+    {
+      "id":"1151729977524625412",
+      "createdDt":"2019-07-18 13:46:39",
+      "updatedDt":"2019-12-13 11:28:53",
+      "remark":null,
+      "username":"ceshi2",
+      "pwd":"cMzZAHM41tgd07YnFiG5z5qX6gA=",
+      "truename":"测试部",
+      "mobile":null,
+      "email":null,
+      "idCard":null,
+      "wechat":null,
+      "openid":null,
+      "defualtPwd":null,
+      "pwdChangedDt":null,
+      "userStatus":"0"
+    },
+    {
+      "id":"1127745116304252930",
+      "createdDt":null,
+      "updatedDt":"2019-12-13 09:43:06",
+      "remark":null,
+      "username":"gemma",
+      "pwd":"cMzZAHM41tgd07YnFiG5z5qX6gA=",
+      "truename":"gemma",
+      "mobile":"15633574867",
+      "email":"15655644@qq.com",
+      "idCard":null,
+      "wechat":null,
+      "openid":null,
+      "defualtPwd":null,
+      "pwdChangedDt":"2019-05-30T06:10:59.000Z",
+      "userStatus":"0"
+    },
+    {
+      "id":"1151729977524625413",
+      "createdDt":"2019-07-18 13:46:39",
+      "updatedDt":"2019-07-18 13:46:39",
+      "remark":null,
+      "username":"ceshi3",
+      "pwd":"cMzZAHM41tgd07YnFiG5z5qX6gA=",
+      "truename":"测试部",
+      "mobile":null,
+      "email":null,
+      "idCard":null,
+      "wechat":null,
+      "openid":null,
+      "defualtPwd":null,
+      "pwdChangedDt":null,
+      "userStatus":"0"
+    },
+    {
+      "id":"1151729977524625414",
+      "createdDt":"2019-07-18 13:46:39",
+      "updatedDt":"2019-07-18 13:46:39",
+      "remark":null,
+      "username":"ceshi4",
+      "pwd":"cMzZAHM41tgd07YnFiG5z5qX6gA=",
+      "truename":"测试部",
+      "mobile":null,
+      "email":null,
+      "idCard":null,
+      "wechat":null,
+      "openid":null,
+      "defualtPwd":null,
+      "pwdChangedDt":null,
+      "userStatus":"0"
+    }]
+  }
+}

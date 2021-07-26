@@ -1,0 +1,24 @@
+{
+  "retCode": "000000",
+  "retDesc": "操作成功",
+  "data": {
+    "id": "1139414451197669377",
+    "createdDt": null,
+    "updatedDt": "2019-11-04 10:57:31",
+    "remark": null,
+    "parentId": "0",
+    "parentIds": "0",
+    "sortNo": 1,
+    "treeLeaf": "0",
+    "treeLevel": null,
+    "menuName": "同步管理",
+    "menuIcon": "fa-magnet",
+    "menuType": "1",
+    "menuUrl": "/syncmgt",
+    "permission": null,
+    "weight": null,
+    "isShow": "1",
+    "belongType": "1",
+    "status": "0"
+  }
+}

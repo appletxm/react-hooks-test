@@ -1,0 +1,185 @@
+{
+  "code": 200,
+  "data": {
+    "records": [{
+      "knowledgeId": 820,
+      "title": "孕产妇中医综合干预",
+      "duration": null,
+      "detail": null,
+      "createTime": "2020-01-01 17:00:22",
+      "modifiedTime": null,
+      "status": null,
+      "userId": null,
+      "attachments": null,
+      "categories": [{
+        "categoryId": 1600,
+        "knowledgeId": 820
+      }],
+      "displayRule": {
+        "ruleId": 19,
+        "knowledgeId": 820,
+        "content": "{\"duration\":300,\"screenSize\":0,\"playerIds\":[\"te02-2256\",\"te02-2258\"],\"datePeriod\":\"\",\"playOrder\":10}",
+        "valid": "0"
+      },
+      "searchTags": null
+    }, {
+      "knowledgeId": 821,
+      "title": "孕产妇中医综合干预",
+      "duration": null,
+      "detail": null,
+      "createTime": "2020-01-01 17:01:22",
+      "modifiedTime": null,
+      "status": null,
+      "userId": null,
+      "attachments": null,
+      "categories": [{
+        "categoryId": 1601,
+        "knowledgeId": 821
+      }],
+      "displayRule": null,
+      "searchTags": null
+    }, {
+      "knowledgeId": 822,
+      "title": "孕产妇宣教",
+      "duration": null,
+      "detail": null,
+      "createTime": "2020-01-01 17:02:22",
+      "modifiedTime": null,
+      "status": null,
+      "userId": null,
+      "attachments": null,
+      "categories": [{
+        "categoryId": 1583,
+        "knowledgeId": 822
+      }],
+      "displayRule": null,
+      "searchTags": null
+    }, {
+      "knowledgeId": 823,
+      "title": "孕产妇宣教",
+      "duration": null,
+      "detail": null,
+      "createTime": "2020-01-01 17:03:22",
+      "modifiedTime": null,
+      "status": null,
+      "userId": null,
+      "attachments": null,
+      "categories": [{
+        "categoryId": 1590,
+        "knowledgeId": 823
+      }],
+      "displayRule": null,
+      "searchTags": null
+    }, {
+      "knowledgeId": 824,
+      "title": "儿枕痛（产后宫缩痛）-产后不适中医调护宣教\n ",
+      "duration": null,
+      "detail": null,
+      "createTime": "2020-01-01 17:04:22",
+      "modifiedTime": null,
+      "status": null,
+      "userId": null,
+      "attachments": null,
+      "categories": [{
+        "categoryId": 1584,
+        "knowledgeId": 824
+      }],
+      "displayRule": null,
+      "searchTags": null
+    }, {
+      "knowledgeId": 825,
+      "title": "儿枕痛（产后宫缩痛）-产后不适中医调护宣教",
+      "duration": null,
+      "detail": null,
+      "createTime": "2020-01-01 17:05:22",
+      "modifiedTime": null,
+      "status": null,
+      "userId": null,
+      "attachments": null,
+      "categories": [{
+        "categoryId": 1591,
+        "knowledgeId": 825
+      }],
+      "displayRule": null,
+      "searchTags": null
+    }, {
+      "knowledgeId": 826,
+      "title": "产后乳汁蓄积-产后不适中医调护宣教",
+      "duration": null,
+      "detail": null,
+      "createTime": "2020-01-01 17:06:22",
+      "modifiedTime": null,
+      "status": null,
+      "userId": null,
+      "attachments": null,
+      "categories": [{
+        "categoryId": 1585,
+        "knowledgeId": 826
+      }],
+      "displayRule": null,
+      "searchTags": null
+    }, {
+      "knowledgeId": 827,
+      "title": "产后乳汁蓄积-产后不适中医调护宣教",
+      "duration": null,
+      "detail": null,
+      "createTime": "2020-01-01 17:07:22",
+      "modifiedTime": null,
+      "status": null,
+      "userId": null,
+      "attachments": null,
+      "categories": [{
+        "categoryId": 1592,
+        "knowledgeId": 827
+      }],
+      "displayRule": null,
+      "searchTags": null
+    }, {
+      "knowledgeId": 828,
+      "title": "产后缺乳-产后不适中医调护宣教",
+      "duration": null,
+      "detail": null,
+      "createTime": "2020-01-01 17:08:22",
+      "modifiedTime": null,
+      "status": null,
+      "userId": null,
+      "attachments": null,
+      "categories": [{
+        "categoryId": 1586,
+        "knowledgeId": 828
+      }],
+      "displayRule": null,
+      "searchTags": null
+    }, {
+      "knowledgeId": 829,
+      "title": "产后缺乳-产后不适中医调护宣教",
+      "duration": null,
+      "detail": null,
+      "createTime": "2020-01-01 17:09:22",
+      "modifiedTime": null,
+      "status": null,
+      "userId": null,
+      "attachments": null,
+      "categories": [{
+        "categoryId": 1593,
+        "knowledgeId": 829
+      }],
+      "displayRule": null,
+      "searchTags": null
+    }],
+    "total": 389,
+    "size": 10,
+    "current": 0,
+    "orders": [],
+    "optimizeCountSql": true,
+    "hitCount": false,
+    "countId": null,
+    "maxLimit": null,
+    "title": "",
+    "category": "all",
+    "createTime": null,
+    "searchCount": true,
+    "pages": 39
+  },
+  "msg": "执行成功"
+}

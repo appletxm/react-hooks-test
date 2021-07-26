@@ -1,0 +1,13 @@
+{
+  "code": 200,
+  "message": "operation success",
+  "data": {
+    "id": "00002",
+    "rule": {
+      "id": "00002",
+      "duration": 120,
+      "screenSize": 0,
+      "valid": 0
+    }
+  }
+}

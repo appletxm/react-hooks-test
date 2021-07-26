@@ -1,0 +1,90 @@
+{
+  "code": 200,
+  "retDesc": "操作成功",
+  "data": [
+    {
+      "id": "001",
+      "parentId": "0",
+      "parentIds": "0",
+      "menuName": "内容管理",
+      "menuIcon": "el-icon-document-copy",
+      "sortNo": 11231,
+      "menuUrl": "/knowledge"
+    },
+    {
+      "id": "001001",
+      "parentId": "001",
+      "parentIds": "0,001",
+      "menuName": "内容体系管理",
+      "menuIcon": "",
+      "sortNo": 11231,
+      "menuUrl": "/knowledge/category"
+    },
+    {
+      "id": "001002",
+      "parentId": "001",
+      "parentIds": "0,001",
+      "menuName": "宣教内容管理",
+      "menuIcon": "",
+      "sortNo": 11231,
+      "menuUrl": "/knowledge/content"
+    },
+    {
+      "id": "001002001",
+      "parentId": "001002",
+      "parentIds": "0,001,001002",
+      "menuName": "宣教内容管理",
+      "menuIcon": "",
+      "sortNo": 11231,
+      "menuUrl": "/knowledge/content/edit",
+      "isShow": false
+    },
+
+    {
+      "id": "003",
+      "parentId": "0",
+      "parentIds": "0",
+      "menuName": "内容展示管理",
+      "menuIcon": "el-icon-receiving",
+      "sortNo": 11231,
+      "menuUrl": "/display"
+    },
+    {
+      "id": "003001",
+      "parentId": "003",
+      "parentIds": "0,003",
+      "menuName": "内容展示规则",
+      "menuIcon": "",
+      "sortNo": 11231,
+      "menuUrl": "/display/rule"
+    },
+    {
+      "id": "003002",
+      "parentId": "003",
+      "parentIds": "0,003",
+      "menuName": "宣教展示内容",
+      "menuIcon": "",
+      "sortNo": 11231,
+      "menuUrl": "/display/content"
+    },
+
+    {
+      "id": "004",
+      "parentId": "0",
+      "parentIds": "0",
+      "menuName": "系统管理",
+      "menuIcon": "ui-icon-line-currency-setting",
+      "sortNo": 11231,
+      "menuUrl": "/settings"
+    },
+    {
+      "id": "004003",
+      "parentId": "004",
+      "parentIds": "0,004",
+      "menuName": "账号管理",
+      "menuIcon": "",
+      "sortNo": 11231,
+      "menuUrl": "/settings/user"
+    }
+  ]
+}

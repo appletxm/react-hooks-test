@@ -1,0 +1,34 @@
+{
+  "code": 200,
+  "message": "operation success",
+  "data": [
+    {
+      "categoryId": "001",
+      "name": "中医",
+      "children": [
+        {
+          "categoryid": "001001",
+          "name": "中医饮食",
+          "children": [
+            {
+              "categoryid": "001001001",
+              "name": "夏季饮食"
+            },
+            {
+              "categoryid": "001001002",
+              "name": "睡眠方面"
+            }
+          ]
+        },
+        {
+          "categoryid": "002",
+          "name": "中医常识"
+        },
+        {
+          "categoryid": "003",
+          "name": "中医健康"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "code": 200,
+  "message": "operation success",
+  "data": {
+    "list": [
+      {
+        "id": "00001",
+        "title" : "宣教内容播放时长",
+        "desc": "",
+        "rule": {
+          "duration": 60000,
+          "screenSize": 1
+        }
+      },
+
+      {
+        "id": "00002",
+        "title" : "宣教内容播放时长",
+        "desc": "",
+        "rule": {
+          "duration": 80000,
+          "screenSize": 0
+        }
+      }
+    ],
+    "curPageSize": 1,
+    "pageNo": 1,
+    "pageSize": 10,
+    "totalPage": 1,
+    "totalCount": 2
+  }
+}

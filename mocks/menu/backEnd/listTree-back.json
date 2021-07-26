@@ -1,0 +1,175 @@
+{
+  "retCode": "000000",
+  "retDesc": "操作成功",
+  "data": [{
+      "id": "1045970623985201154",
+      "parentId": "1045970495056490497",
+      "parentIds": "0,1045970495056490497",
+      "menuName": "菜单管理",
+      "menuIcon": null,
+      "sortNo": 1,
+      "menuUrl": "/menu"
+    },
+
+    {
+      "id": "1045970495056490497",
+      "parentId": "0",
+      "parentIds": "0",
+      "menuName": "系统管理",
+      "menuIcon": "ui-icon-line-currency-setting",
+      "sortNo": 5,
+      "menuUrl": "/sysman"
+    },
+
+    {
+      "id": "1045970928420368385",
+      "parentId": "1045970495056490497",
+      "parentIds": "0,1045970495056490497",
+      "menuName": "配置管理",
+      "menuIcon": null,
+      "sortNo": 20,
+      "menuUrl": "/config"
+    },
+
+    {
+      "id": "1045971050160041986",
+      "parentId": "1045970495056490497",
+      "parentIds": "0,1045970495056490497",
+      "menuName": "字典管理",
+      "menuIcon": null,
+      "sortNo": 30,
+      "menuUrl": "/dict"
+    },
+
+    {
+      "id": "1029212684597014529",
+      "parentId": "1045970495056490497",
+      "parentIds": "0,1045970495056490497",
+      "menuName": "用户管理",
+      "menuIcon": null,
+      "sortNo": 50,
+      "menuUrl": "/user"
+    },
+
+    {
+      "id": "1045963550207619073",
+      "parentId": "1045970495056490497",
+      "parentIds": "0,1045970495056490497",
+      "menuName": "用户角色管理",
+      "menuIcon": null,
+      "sortNo": 60,
+      "menuUrl": "/role"
+    },
+
+    {
+      "id": "1202783983247577090",
+      "parentId": "0",
+      "parentIds": "0",
+      "menuName": "测试一级菜单",
+      "menuIcon": "ui-icon-line-currency-hide",
+      "sortNo": 11171,
+      "menuUrl": "/test"
+    },
+
+    {
+      "id": "1202784951712370689",
+      "parentId": "1202783983247577090",
+      "parentIds": "0,1202783983247577090",
+      "menuName": "测试二级的菜单",
+      "menuIcon": "",
+      "sortNo": 11181,
+      "menuUrl": "/test/test2"
+    },
+
+    {
+      "id": "1202785563866845185",
+      "parentId": "1202784951712370689",
+      "parentIds": "0,1202783983247577090,1202784951712370689",
+      "menuName": "测试三级菜单",
+      "menuIcon": "",
+      "sortNo": 11191,
+      "menuUrl": "/test/test2/test3"
+    },
+
+    {
+      "id": "1202789510153261057",
+      "parentId": "1202783983247577090",
+      "parentIds": "0,1202783983247577090",
+      "menuName": "测试二级菜单3",
+      "menuIcon": "",
+      "sortNo": 11231,
+      "menuUrl": "/test/test2-3"
+    },
+
+    {
+      "id": "1202789510153261999",
+      "parentId": "0",
+      "parentIds": "0",
+      "menuName": "权限测试页",
+      "menuIcon": "ui-icon-line-currency-star",
+      "sortNo": 11231,
+      "menuUrl": "/permission-test"
+    },
+
+    {
+      "id": "1202789510153261801",
+      "parentId": "0",
+      "parentIds": "0",
+      "menuName": "科普宣教管理",
+      "menuIcon": "ui-icon-line-currency-star",
+      "sortNo": 11231,
+      "menuUrl": "/propaganda-guid"
+    },
+
+    {
+      "id": "1202789510153261802",
+      "parentId": "0",
+      "parentIds": "0",
+      "menuName": "宣教规则管理",
+      "menuIcon": "ui-icon-line-currency-star",
+      "sortNo": 11231,
+      "menuUrl": "/propaganda-rule"
+    },
+
+    {
+      "id": "1202789510153261803",
+      "parentId": "0",
+      "parentIds": "0",
+      "menuName": "宣教资料展示",
+      "menuIcon": "ui-icon-line-currency-star",
+      "sortNo": 11231,
+      "menuUrl": "/propaganda-material"
+    },
+
+    {
+      "id": "1202789510153261804",
+      "parentId": "0",
+      "parentIds": "0",
+      "menuName": "指导建议管理",
+      "menuIcon": "ui-icon-line-currency-star",
+      "sortNo": 11231,
+      "menuUrl": "/guide-advise"
+    },
+
+    {
+      "id": "1202789510153261805",
+      "parentId": "0",
+      "parentIds": "0",
+      "menuName": "指导规则管理",
+      "menuIcon": "ui-icon-line-currency-star",
+      "sortNo": 11231,
+      "menuUrl": "/guide-rule"
+    },
+
+    {
+      "id": "1202789510153261806",
+      "parentId": "0",
+      "parentIds": "0",
+      "menuName": "指导建议展示",
+      "menuIcon": "ui-icon-line-currency-star",
+      "sortNo": 11231,
+      "menuUrl": "/guide-show"
+    }
+
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "code": 200,
+  "message": "operation success",
+  "data": {
+    "list": [
+      {
+        "id": "00001",
+        "title" : "一年中最热的这40天，对应体质这样吃，全家受益！",
+        "rule": {
+          "id": "00001",
+          "duration": 300,
+          "screenSize": 1,
+          "valid": 1
+        }
+      },
+
+      {
+        "id": "00002",
+        "title": "夏天，吃这2种水果可养肺哦！",
+        "rule": {
+          "id": "00002",
+          "duration": 120,
+          "screenSize": 0,
+          "valid": 0
+        }
+      },
+
+      {
+        "id": "00003",
+        "title": "炎热天气没胃口？番茄炒蛋还可变出新花样？不妨试试~广东省中医院杨志敏教授今日推荐"
+      }
+    ],
+    "curPageSize": 1,
+    "pageNo": 1,
+    "pageSize": 10,
+    "totalPage": 1,
+    "totalCount": 50
+  }
+}

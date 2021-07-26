@@ -1,0 +1,16 @@
+{
+  "retCode": "000000",
+  "retDesc": "操作成功",
+  "data": {
+    "id": "1031749871245107201",
+    "createdDt": "2018-08-21 11:48:33",
+    "updatedDt": "2019-12-12 19:52:17",
+    "remark": null,
+    "codeNum": "01",
+    "codeName": "农村户口",
+    "codeTypeNum": "residentNature",
+    "parentId": null,
+    "status": "0",
+    "sortNo": 0
+  }
+}

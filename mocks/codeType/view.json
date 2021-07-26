@@ -1,0 +1,13 @@
+{
+  "retCode": "000000",
+  "retDesc": "操作成功",
+  "data": {
+    "id": "1189774891883048136",
+    "createdDt": "2019-10-31 14:30:33",
+    "updatedDt": "2019-12-12 19:49:42",
+    "remark": "内容发布的分类",
+    "codeTypeNum": "CONTENT_CLASSIFICATION",
+    "nationNum": "",
+    "codeTypeName": "分类"
+  }
+}

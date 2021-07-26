@@ -1,0 +1,17 @@
+{
+  "code": 200,
+  "retDesc": "操作成功",
+  "data": {
+    "userTypeCode": "",
+    "truename": "系统管理员",
+    "orgName": "",
+    "authStatus": "",
+    "HF_Auth_Token": "ZDQwZmVjZmY3ZjAwMDAwMTJlNTQyNzIwNmI0ODRjYjQ6c3lzYWRtaW4=",
+    "roleList": [{
+      "roleId": "1087965720415227905",
+      "roleName": "超级管理员"
+    }],
+    "userId": "1027740701250162689",
+    "username": "sysadmin"
+  }
+}

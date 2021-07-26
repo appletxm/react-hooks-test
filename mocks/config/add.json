@@ -1,0 +1,13 @@
+{
+  "retCode":"000000",
+  "retDesc":"操作成功",
+  "data":{
+    "id":"1205019490434269185",
+    "createdDt":"2019-12-12 15:00:09",
+    "updatedDt":"2019-12-12 15:00:09",
+    "remark":"d",
+    "configKey":"gemtest",
+    "configValue":"dd",
+    "sortNo":1
+  }
+}
