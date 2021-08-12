@@ -2,10 +2,10 @@ import AppCtx from '../providers/app-ctx';
 
 const { Link, BrowserRouter } = ReactRouterDOM;
 
-window.wx = {
-  a: 1,
-  b: 2
-}
+// window.wx = {
+//   a: 1,
+//   b: 2
+// }
 
 const App = class App extends React.Component {
   static contextType = AppCtx
