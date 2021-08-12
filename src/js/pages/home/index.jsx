@@ -48,6 +48,16 @@ class Home extends React.Component {
     // Prints: 'Remaining: Make coffee, Take a nap'
   }
 
+  sendInfo() {
+    console.info('----sendInfo start----', JSON.stringify(window.wx))
+    try {
+      testWx('9999')
+    } catch(err) {
+      console.info('===err===', err)
+    }
+    console.info('----sendInfo end----')
+  }
+
   render() {
     // console.info('===home page==', this.context);
     const { appPrefix } = this.context;
@@ -74,6 +84,8 @@ class Home extends React.Component {
             })
           }
         </ul>
+
+        <button className={'test-btn-send'} onClick={this.sendInfo.bind(this)}>send info</button>
       </div>
     );
   }

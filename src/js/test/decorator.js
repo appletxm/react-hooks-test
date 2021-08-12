@@ -18,7 +18,7 @@ function log(target, name, descriptor) {
 }
 
 @testable(true)
-class test {
+class Test {
   constructor(...arg) {
     console.info('**decorate2**', arg);
   }
@@ -29,4 +29,4 @@ class test {
   }
 }
 
-export default test;
+export default Test;

@@ -33,15 +33,18 @@ module.exports = {
 
   getOutPutConfig: function (envKeyWord, env, webpackConfig) {
     const appJs = path.resolve(env.sourcePath + '/js/index.jsx')
+    const loginJs = path.resolve(env.sourcePath + '/js/pages/login/index.jsx')
     const isDev = envKeyWord === 'development' || envKeyWord === 'mock'
 
     webpackConfig.output.publicPath = isDev ? '/' : env.publicPath
 
     if (isDev === true) {
       webpackConfig.entry.app = [hotMiddlewareScript, appJs]
+      webpackConfig.entry.login = [hotMiddlewareScript, loginJs]
       webpackConfig.devtool = 'inline-source-map'
     } else {
       webpackConfig.entry.app = [appJs]
+      webpackConfig.entry.login = [loginJs]
       // webpackConfig.devtool = 'cheap-source-map'
     }
 
@@ -186,10 +189,11 @@ module.exports = {
     }
   },
 
-  getHtmlWebPluginConfig: function (envKeyWord, env, webpackConfig) {
+  generateHtmlPluginCfg: function(options) {
+    const { bundleName, pageName, title, env,  envKeyWord} = options
     const { css, javascript } = this.getCssJsFile()
     var baseConfig = {
-      favicon: path.resolve('favicon.ico'),
+      // favicon: path.resolve('./src/assets/images/favicon.ico'),
       inject: 'body',
       publicPath: envKeyWord !== 'production' ? '/' : env.publicPath,
       favicon: '',
@@ -198,22 +202,39 @@ module.exports = {
         js: javascript
       }
     }
-
     const mainJsFiles = javascript.concat([])
+    const pageConfig = {
+      title,
+      filename: path.resolve(`${env.distPath}/${pageName}`),
+      template: path.resolve(env.sourcePath + '/index.ejs'),
+      chunks: ['styles', 'vendor', 'runtime', bundleName],
+      needViewPort: false,
+      libFiles: {
+        css: css,
+        js: mainJsFiles
+      },
+      inject: 'body'
+    }
 
+    return new HtmlWebPlugin(Object.assign(JSON.parse(JSON.stringify(baseConfig)), pageConfig))
+  },
+
+  getHtmlWebPluginConfig: function (envKeyWord, env, webpackConfig) {
     webpackConfig.plugins.push(
-      new HtmlWebPlugin(Object.assign(baseConfig, {
+      this.generateHtmlPluginCfg({
         title: '首页',
-        filename: path.resolve(env.distPath + '/index.html'),
-        template: path.resolve(env.sourcePath + '/index.ejs'),
-        chunks: ['styles', 'vendor', 'runtime', 'app'],
-        needViewPort: false,
-        libFiles: {
-          css: css,
-          js: mainJsFiles
-        },
-        inject: 'body'
-      }))
+        bundleName: 'app',
+        pageName: 'index.html',
+        envKeyWord, env
+      }),
+
+      this.generateHtmlPluginCfg({
+        title: '请登录',
+        bundleName: 'login',
+        pageName: 'login.html',
+        envKeyWord, env
+      })
+
     )
 
     return webpackConfig

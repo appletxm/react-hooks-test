@@ -50,6 +50,11 @@
     },
 
     "css": {
+      "antd": {
+        "version": "4.15.4",
+        "src": "node_modules/antd/dist/antd.min.css",
+        "dest": "src/assets/style/antd.4.15.4/index.min.css"
+      }
     }
   }
 }

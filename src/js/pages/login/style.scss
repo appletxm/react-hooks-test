@@ -1,0 +1,17 @@
+.#{$prefix}-p-login {
+  width: 600px;
+  height: 300px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 1px solid #f0f0f0;
+  border-radius: 4px;
+
+  .ant-form {
+    width: 60%;
+    margin: 50px auto;
+    position: relative;
+    left: -20px
+  }
+}
