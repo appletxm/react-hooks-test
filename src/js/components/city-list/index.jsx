@@ -15,4 +15,6 @@ export const CityList = () => {
   return observer(() => <CityView cities={allCities} />);
 };
 
+CityList.displyName = 'CityList'
+
 export default CityList;

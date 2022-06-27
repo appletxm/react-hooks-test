@@ -1,6 +1,8 @@
-import { appPrefix, PageContainer } from 'components/page-container'
+import { appPrefix, PageContainer } from 'components/page-container';
 
-const { Form, Input, Button, Checkbox } = antd
+const {
+  Form, Input, Button, Checkbox,
+} = antd;
 
 const onFinish = (values) => {
   console.log('Success:', values);
@@ -46,5 +48,5 @@ PageContainer(
         </Button>
       </Form.Item>
     </Form>
-  </div>
-)
+  </div>,
+);

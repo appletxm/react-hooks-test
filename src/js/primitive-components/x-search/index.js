@@ -1,6 +1,10 @@
 import { cssGlobals } from '../../providers/app-ctx';
 
 class XSearch extends HTMLElement {
+  constructor() {
+    super();
+  }
+
   connectedCallback() {
     const mountPoint = document.createElement('span');
     mountPoint.setAttribute('class', `${cssGlobals.appPrefix}-c-x-search`);

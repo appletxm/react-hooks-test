@@ -11,10 +11,9 @@ const { render } = ReactDOM;
 const ins = new TestDecorator(666);
 console.log('**decorate5**', ins.txm, ins.testLog());
 
+export const { appPrefix } = cssGlobals;
 
-export const appPrefix = cssGlobals.appPrefix
-
-export const PageContainer = function(node) {
+export const PageContainer = function (node) {
   render((
     <ErrorBoundary>
       <Provider value={ctxValue}>
@@ -22,5 +21,4 @@ export const PageContainer = function(node) {
       </Provider>
     </ErrorBoundary>
   ), document.querySelector('#app'));
-}
-
+};

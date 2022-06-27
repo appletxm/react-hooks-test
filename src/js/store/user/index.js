@@ -2,7 +2,9 @@ const { makeAutoObservable } = mobx;
 
 class User {
   userInfo = {}
+
   permission = {}
+
   accessToken = ''
 
   constructor() {
@@ -18,7 +20,7 @@ class User {
   }
 
   set setPermission(permission) {
-    this.permission = permission
+    this.permission = permission;
   }
 
   * doLogin() {
