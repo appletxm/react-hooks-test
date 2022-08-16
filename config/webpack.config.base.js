@@ -22,15 +22,15 @@ module.exports = function (envKeyWord, env) {
     },
     module: {
       rules: [
-        {
-          enforce: 'pre',
-          test: /\.(js|jsx)$/,
-          loader: 'eslint-loader',
-          options: {
-            fix: true
-          },
-          exclude: /node_modules/
-        },
+        // {
+        //   enforce: 'pre',
+        //   test: /\.(js|jsx)$/,
+        //   loader: 'eslint-loader',
+        //   options: {
+        //     fix: true
+        //   },
+        //   exclude: /node_modules/
+        // },
 
         {
           test: /\.(js|jsx)$/,

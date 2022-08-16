@@ -7,6 +7,8 @@ const CopyPlugin = require('copy-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const hotMiddlewareScript = 'webpack-hot-middleware/client?path=/__webpack_hmr&reload=true'
 
+const ESLintPlugin = require('eslint-webpack-plugin')
+
 module.exports = {
   getEnvCfg: function (envKeyWord) {
     let envCfg, envFilePath
@@ -126,6 +128,12 @@ module.exports = {
     }
 
     webpackConfig.plugins.push(
+      new ESLintPlugin({
+        cwd: path.resolve('./src/js'),
+        extensions: ['.js', '.jsx', '.ts', '.tsx'],
+        fix: true
+      }),
+
       new CopyPlugin({
         patterns: [
           {

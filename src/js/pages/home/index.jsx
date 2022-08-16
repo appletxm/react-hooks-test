@@ -50,7 +50,7 @@ class Home extends React.Component {
   sendInfo() {
     console.info('----sendInfo start----', JSON.stringify(window.wx));
     try {
-      testWx('9999');
+      // testWx('9999');
     } catch (err) {
       console.info('===err===', err);
     }

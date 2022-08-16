@@ -17,6 +17,6 @@ webpackConfig = webpackFn.getOutPutConfig(envKeyWord, env, webpackConfig)
 webpackConfig = webpackFn.getOptimizationConfig(envKeyWord, env, webpackConfig)
 webpackConfig = webpackFn.getPluginConfig(envKeyWord, webpack, webpackConfig, env)
 webpackConfig = webpackFn.getHtmlWebPluginConfig(envKeyWord, env, webpackConfig)
-webpackConfig = webpackFn.getFontPathConfig(envKeyWord, webpackConfig)
+// webpackConfig = webpackFn.getFontPathConfig(envKeyWord, webpackConfig)
 
 module.exports = webpackConfig
